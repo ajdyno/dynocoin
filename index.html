@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynocoin</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .neon-text {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #00ffe7;
+      text-shadow: 
+        0 0 5px #00ffe7,
+        0 0 10px #00ffe7,
+        0 0 20px #00ffe7,
+        0 0 40px #00ffe7;
+      animation: flicker 1.5s infinite alternate;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    .logo {
+      width: 180px;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    .contract-box {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .contract-text {
+      font-family: monospace;
+      font-size: 0.95rem;
+      background-color: #111;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #00ffea;
+    }
+
+    .copy-btn {
+      background-color: #00ffea;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .copy-btn:hover {
+      background-color: #00ccb8;
+    }
+
+    .buy-btn {
+      background-color: #00ffea;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .buy-btn:hover {
+      background-color: #00ccb8;
+    }
+
+    .description {
+      max-width: 700px;
+      text-align: left;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      margin-top: 3rem;
+    }
+
+    .description p {
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .neon-text {
+        font-size: 2.5rem;
+      }
+
+      .contract-box {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="neon-text">Dynocoin</h1>
+
+  <img src="37e152c9-e37d-4c62-aebc-15226ef204f7.png" alt="Logo Dynocoin" class="logo" />
+
+  <div class="contract-box">
+    <div class="contract-text" id="contract">0xDa9756415A5D92027d994Fd33aC1823bA2fdc9ED</div>
+    <button class="copy-btn" onclick="copyContract()">📋 Copiar Contrato</button>
+  </div>
+
+  <button class="buy-btn" onclick="window.open('https://pancakeswap.finance/swap?outputCurrency=0xDa9756415A5D92027d994Fd33aC1823bA2fdc9ED&inputCurrency=0x55d398326f99059fF775485246999027B3197955', '_blank')">Comprar Dynocoin</button>
+
+  <div class="description">
+    <p><strong>Dynocoin</strong> é uma criptomoeda desenvolvida na Binance Smart Chain (BSC), com 18 casas decimais e um supply total de 15 milhões de tokens.</p>
+    <p>O projeto nasce com o objetivo de integrar o ecossistema de criptoativos com <strong>mineração em nuvem</strong> e <strong>sistema de indicações</strong>, oferecendo uma forma acessível e escalável de gerar renda passiva.</p>
+    <p>Em sua fase atual, Dynocoin está disponível para compra na PancakeSwap, mas no futuro fará parte de um ecossistema completo de mineração com participação comunitária.</p>
+    <p>Nosso foco é <strong>inovação, acessibilidade e recompensa por engajamento.</strong> Junte-se agora ao início da revolução Dynocoin!</p>
+  </div>
+
+  <script>
+    function copyContract() {
+      const contractText = document.getElementById('contract').textContent;
+      navigator.clipboard.writeText(contractText).then(() => {
+        alert("Contrato copiado!");
+      });
+    }
+  </script>
+
+</body>
+</html>
