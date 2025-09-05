@@ -35,10 +35,17 @@
       100% { opacity: 1; }
     }
 
+    .logo-box {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem 0;
+    }
+
     .logo {
       width: 180px;
       border-radius: 10px;
-      margin: 1rem 0;
     }
 
     .contract-box {
@@ -120,6 +127,10 @@
         padding: 0 1rem;
         text-align: center;
       }
+
+      .logo-box {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -127,7 +138,10 @@
 
   <h1 class="neon-text">Dynocoin</h1>
 
-  <img src="37e152c9-e37d-4c62-aebc-15226ef204f7.png" alt="Logo Dynocoin" class="logo" />
+  <div class="logo-box">
+    <img src="novo.png" alt="Logo Dynocoin Nova" class="logo" />
+    <img src="dyno.png" alt="Logo Dyno" class="logo" />
+  </div>
 
   <div class="contract-box">
     <div class="contract-text" id="contract">0xDa9756415A5D92027d994Fd33aC1823bA2fdc9ED</div>
@@ -154,4 +168,5 @@
 
 </body>
 </html>
+
 
