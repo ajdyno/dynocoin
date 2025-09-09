@@ -26,7 +26,8 @@
         0 0 20px #00ffe7,
         0 0 40px #00ffe7;
       animation: flicker 1.5s infinite alternate;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
     @keyframes flicker {
@@ -36,16 +37,32 @@
     }
 
     .logo-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      width: 100%;
+      max-width: 1000px;
+      margin: 2rem 0;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo-column {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
       justify-content: center;
       align-items: center;
-      margin: 1rem 0;
     }
 
     .logo {
-      width: 180px;
-      border-radius: 10px;
+      width: 220px; /* aumentei o tamanho */
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     .contract-box {
@@ -62,7 +79,7 @@
 
     .contract-text {
       font-family: monospace;
-      font-size: 0.95rem;
+      font-size: 1rem;
       background-color: #111;
       padding: 0.5rem 1rem;
       border-radius: 5px;
@@ -112,24 +129,17 @@
       margin-bottom: 1.2rem;
     }
 
-    @media (max-width: 600px) {
-      .neon-text {
-        font-size: 2.5rem;
+    @media (max-width: 800px) {
+      .logo-box {
+        grid-template-columns: 1fr;
       }
-
-      .contract-box {
-        flex-direction: column;
-        text-align: center;
+      .logo {
+        width: 180px;
       }
-
       .description {
         font-size: 1rem;
         padding: 0 1rem;
         text-align: center;
-      }
-
-      .logo-box {
-        flex-direction: column;
       }
     }
   </style>
@@ -139,8 +149,22 @@
   <h1 class="neon-text">Dynocoin</h1>
 
   <div class="logo-box">
-    <img src="novo.png" alt="Logo Dynocoin Nova" class="logo" />
-    <img src="dyno.png" alt="Logo Dyno" class="logo" />
+    <!-- Esquerda -->
+    <div class="logo-column">
+      <img src="1.png" alt="Logo 1" class="logo" />
+      <img src="2.png" alt="Logo 2" class="logo" />
+    </div>
+
+    <!-- Centro -->
+    <div class="logo-column">
+      <img src="novo.png" alt="Logo Dynocoin Nova" class="logo" />
+    </div>
+
+    <!-- Direita -->
+    <div class="logo-column">
+      <img src="3.png" alt="Logo 3" class="logo" />
+      <img src="dyno.png" alt="Logo dyno" class="logo" />
+    </div>
   </div>
 
   <div class="contract-box">
@@ -152,21 +176,4 @@
 
   <div class="description">
     <p><strong>Dynocoin</strong> é uma criptomoeda desenvolvida na Binance Smart Chain (BSC), com 18 casas decimais e um supply total de 15 milhões de tokens.</p>
-    <p>O projeto nasceu com o objetivo de integrar o ecossistema de criptoativos com <strong>mineração em nuvem</strong> e <strong>sistema de indicações</strong>, oferecendo uma forma acessível e escalável de gerar renda passiva.</p>
-    <p>Em sua fase atual, Dynocoin está disponível para compra na PancakeSwap, mas no futuro fará parte de um ecossistema completo de mineração com participação comunitária.</p>
-    <p>Nosso foco é <strong>inovação, acessibilidade e recompensa por engajamento.</strong> Junte-se agora ao início da revolução Dynocoin!</p>
-  </div>
-
-  <script>
-    function copyContract() {
-      const contractText = document.getElementById('contract').textContent;
-      navigator.clipboard.writeText(contractText).then(() => {
-        alert("Contrato copiado!");
-      });
-    }
-  </script>
-
-</body>
-</html>
-
-
+    <p>O projeto nasceu com o objetivo de integrar o ecossistema de criptoativos com <strong>mineração em nuvem</strong> e <strong>sistema de indicações</strong>, oferecendo uma forma acessível e escalável de gerar renda passiv
